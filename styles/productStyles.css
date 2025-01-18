@@ -1,0 +1,253 @@
+/* Main container styling */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+    padding: 0 1rem;
+    background-color: black; /* Ensures background is black */
+}
+
+/* Output container styling */
+#outputApi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Space between cards */
+    padding: 1rem; /* Optional padding around the container */
+}
+
+/* Styling for product cards */
+.card {
+    flex: 1 1 calc(25% - 1.5rem); /* 4 cards per row by default */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    margin-bottom: 1.2rem; /* Space between rows */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    transition: transform 0.2s, box-shadow 0.2s; /* Add box-shadow to transition */
+    display: flex;
+    flex-direction: column;
+    height: 600px; /* Fixed height for all cards */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Card image styling */
+.card-img-top {
+    width: 100%;
+    height: 150px; /* Fixed height for images to ensure uniformity */
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+/* Card body styling to fill the remaining space */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Make the card body flexible */
+    padding: 1rem; /* Add padding to the card body */
+}
+
+/* Card text truncation */
+.card-text-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive font sizes */
+.card-title, .card-text {
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    #outputApi {
+        flex-wrap: wrap;
+        gap: 1rem; /* Space between cards */
+    }
+    .card-title {
+        font-size: 1.25rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(33.333% - 1.5rem); /* 3 cards per row on tablets */
+    }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+    .card {
+        flex: 1 1 calc(50% - 1.5rem); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 calc(100% - 1.5rem); /* 1 card per row on mobile */
+    }
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block; /* Show dropdown when active */
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #00A7F8;
+    font-size: 0.85rem;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+    display: block;
+    cursor: pointer;
+}
+
+/* Styling for actions container */
+.actions-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+}
+
+.actions-container button {
+    margin: 10px 0;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+}
+
+/* Style for Add to Cart button */
+.add-to-cart-btn {
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect for Add to Cart button */
+.add-to-cart-btn:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+}
+
+
+
+/* Media queries for responsive design */
+
+/* For tablets (768px and up) */
+@media (max-width: 1024px) {
+    .actions-container {
+        width: 50%;
+    }
+
+    .add-to-cart-btn,
+    .favourites-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* For mobile devices (768px and below) */
+@media (max-width: 768px) {
+    .actions-container {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .add-to-cart-btn,
+    .favourites-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    .actions-container button {
+        margin: 10px 5px;
+        width: 100%;
+    }
+}
+
+.container {
+    margin-bottom: 30px;
+}
+
+
+
+
+/* New Styles for card in main screen  */
+.frontScreen-card {
+    width: 300px; /* Fixed width of the card */
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.frontScreen-image-wrapper {
+    width: 100%;
+    height: 300px; /* Fixed height for the image area */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.frontScreen-image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Ensure the image is fully visible */
+    display: block;
+}
+
+.frontScreen-card-details {
+    padding: 16px;
+}
+
+.frontScreen-card-title {
+    font-size: 1.25em;
+    margin: 0;
+}
+
+.frontScreen-card-text {
+    margin: 4px 0;
+}

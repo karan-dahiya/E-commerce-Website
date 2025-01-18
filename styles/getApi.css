@@ -1,0 +1,90 @@
+/* Base styles for #getApiDiv */
+#getApiDiv {
+    position: absolute;
+    top: 72px; /* Adjusted to your navbar height */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 72px); /* Full viewport height minus navbar height */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Change to column to align content vertically */
+    overflow: auto;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    padding: 20px; /* Added padding to avoid content touching edges */
+    background-color: white;
+}
+
+/* Visible state */
+#getApiDiv.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Heading styling */
+#getApiDiv h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0; /* Margin for spacing */
+    padding: 0;
+}
+
+/* Close button styling */
+.close-btnApi {
+    cursor: pointer;
+    /* background-color: #00A7F8; */
+    /* border: none; */
+    /* border-radius: 5px; */
+    /* padding: 10px 20px; */
+    font-size: 4rem;
+    /* width: 100%; */
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* .close-btnApi:hover {
+    background-color: #40b7f3;
+} */
+
+/* Container and row styling */
+.apiContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.secondApi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
+.api {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Margin for spacing between rows */
+}
+.apiHeader{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    #getApiDiv {
+        top: 46px; 
+    }
+}

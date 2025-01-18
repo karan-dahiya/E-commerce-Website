@@ -1,0 +1,125 @@
+.showcase{
+    margin: 0;
+    font-family: monospace;
+}
+.slider{
+    width: 100vw;
+    max-width: 100vw;
+    height: 80vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.list{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 100%;    
+    width: 100vw;
+    height: calc(80vh - 72px); 
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+.list img{
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.list .item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none; /* Ensure the pseudo-element doesn’t interfere with mouse events */
+}
+
+
+
+.buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(122, 120, 120, 0.333);
+    color: rgb(255, 255, 255);
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.dots{
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.dots li{
+    width: 10px;
+    list-style-type: none;
+    height: 10px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 1s;
+}
+.dots li.active{
+    width: 30px;
+}
+@media (max-width: 486px) {
+    main{
+        padding: 0 1rem;
+    }
+    .list{
+        height: calc(80vh - 50px);
+        top: 0; 
+    }
+    .slider{
+        height: 50vh;
+    }
+    .showcase{
+        height: 50vh;
+    }
+    .list{
+        height: calc(50vh - 72px); 
+    }
+    .showcaseArea{
+        height: 50vh;
+    }
+    
+
+
+}
+@media (max-width: 992px) {
+    .list{
+        top: 0; 
+    }
+    .slider{
+        height: 50vh;
+    }
+    .showcase{
+        height: 50vh;
+    }
+    .list{
+        height: calc(60vh - 72px); 
+    }
+    .showcaseArea{
+        height: 40vh;
+      }
+
+}

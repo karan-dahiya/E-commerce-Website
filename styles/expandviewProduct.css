@@ -1,0 +1,150 @@
+/* Styles for the expanded view */
+.expanded-card {
+    position: absolute;
+    top: 72px; /* Adjusted to your navbar height */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 72px); /* Full viewport height minus navbar height */
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.expanded-card.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.expanded-card .card-img-top {
+    width: 80%; /* Adjust as needed */
+    height: auto;
+    max-height: 80vh; /* Ensure it doesn't overflow the viewport */
+    object-fit: cover; /* Ensure it covers the area while maintaining aspect ratio */
+}
+
+.expanded-card .card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 4rem;
+    cursor: pointer;
+    color: #000;
+    background-color: transparent;
+    border: none;
+}
+
+
+.bigDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.bigDisplay div img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Ensure the image fits within its container */
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    .bigDisplay {
+        flex-direction: column;
+    }
+    .expanded-card {
+        top: 46px; /* Adjusted to your navbar height */
+    }
+    .expanded-card .card-img-top {/* Ensure it doesn't overflow the viewport */
+        object-fit: cover; /* Ensure it covers the area while maintaining aspect ratio */
+        padding: 0 10px;
+    }
+    .card-title{
+        font-size: 0.9rem;
+    }
+    .card-text, #exchangeNote {
+        font-size: 0.7rem;
+    }
+    #exchangeNote{
+        padding: 0 20px;
+    }
+    #imgDiv{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 992px) {
+    .bigDisplay {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .expanded-card {
+        top: 46px; /* Adjusted to your navbar height */
+    }
+    .expanded-card .card-img-top {
+        width: auto; /* Adjust as needed */
+        height: 80%;
+        max-width: 100%; /* Ensure it doesn't overflow the viewport */
+        object-fit: cover; /* Ensure it covers the area while maintaining aspect ratio */
+    }
+    #expandedCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    #imgDiv{
+        height: 400px;
+        width: 100%;
+    }
+    .card-title{
+        font-size: 0.9rem;
+    }
+    .card-text, #exchangeNote {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 2000px) {
+    .bigDisplay {
+        flex-direction: row;
+    }
+    .expanded-card .card-img-top {
+        height: 80%;
+    }
+}
+
+.col h5, p {
+    text-align: left;
+}
+
+#exchangeNote { /* Slightly smaller than the default text size */
+    color: #6c757d; /* Light gray color for a subtle appearance */
+    margin-top: 0.5rem; /* Space above the note */
+    text-align: center; /* Center align the text */
+    padding-bottom: 50px;
+}
+
+.card-text-truncate-exp {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

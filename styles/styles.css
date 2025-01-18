@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Ensure scrollbar is visible even when not hovering */
+::-webkit-scrollbar {
+  width: 7px; /* width of the scrollbar */
+  height: 5px; /* height of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2d2c2c; /* color of the handle */
+  border-radius: 5px; /* roundness of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the handle on hover */
+}
+
+*{
+  
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal
+}
+
+/* Ensure main content is not overlapped by fixed navbars */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+@media (min-width: 992px){
+
+  
+/* Ensure all icons in the navbar have the same size and weight */
+.navbar-nav .nav-link .bi {
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Adjust the font weight as needed */
+}
+
+/* Additional styling for the navbar toggler icon */
+.navbar-toggler .bi {
+  font-size: 1.6rem; /* Adjust size for the toggler icon */
+  color: black;
+}
+/* Thinner Navbar - Positioned above borderNavbar */
+.thinnerNavBar {
+  background-color: rgb(244, 243, 243);
+  height: 22px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0 65px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's above the borderNavBar */
+}
+.thinnerRight ul.navbar-nav li:hover > a {
+  color: grey;
+}
+/* Border Navbar - Positioned below thinnerNavbar */
+.borderNavBar {
+  background-color: #ffffff;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  position: fixed;
+  top: 22px; /* Just below the thinnerNavBar */
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensure it's below the thinnerNavBar */
+}
+.bigLogo > img {
+  height: 40px;
+  width: auto;
+}
+
+.borderRight> ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.borderRight> ul> li, .borderCenter > ul> li{
+  margin: 5px
+}
+.icon{
+  font-size:1.1rem;
+  padding: 3px 6px 3px 6px;
+}
+.icon:hover{
+  background-color: #dcd8d8;
+  transition: 0.8s;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.helpHover {
+  position: relative;
+  display: inline-block;
+  z-index: 10000;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: none;
+  padding: 10px 5px 10px 5px;
+  z-index: 3000;
+  font-size: 0.8rem;
+  right: 0%;
+  pointer-events: auto;
+}
+/* Dropdown menu style */
+.helpHover .dropdown-menu {
+  display: none;
+  position: absolute; /* Ensure it’s absolutely positioned within its container */
+  background-color: white;
+  border: none;
+  padding: 10px 5px;
+  z-index: 2000; /* Ensure it's above the favourites screen */
+  font-size: 0.8rem;
+  right: 0%;
+  pointer-events: auto;
+}
+
+.helpHover:hover .dropdown-menu,
+.helpHover:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu > li > a {
+  color: rgb(135, 133, 133);
+  font-weight: 600;
+}
+.icons {
+  padding: 0;
+  margin: 0;
+}
+
+.searchInput {
+  display: flex;
+  padding: 2px 10px 2px 10px;
+  border-radius: 28px;
+  background-color:  rgb(244, 243, 243);
+  width: auto;
+  cursor: pointer;
+  align-items: center;
+  transition: width 0.3 ease;
+  /* box-shadow: 0 10px 25px rgba(0,0,0,0.3); */
+}
+
+.searchInput input{
+  border:none;
+  outline: none;
+  background: transparent;
+  
+  padding: 0 8px;
+  width: 80px;
+  /* transition: 0.8s; */
+  transition: width 0.3s ease;
+}
+
+.searchInput.active input{
+  width: 50vw;
+  justify-content: center;
+}
+.searchInput:hover{
+  background-color: #dcd8d8;
+  transition: 0.8s;
+}
+.searchInput a .bi{
+  font-size: 18px;
+  color: #00A7F8;
+  font-weight: bold;
+}
+
+.borderCenter a {
+  position: relative;
+}
+.borderCenter a::before {
+  content: '';
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00A7F8;
+  transition: 0.5s;
+}
+.borderCenter a:hover::before{
+  width: 100%;
+}
+
+.cancelButton{
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.inputSet {
+  display: flex;
+  flex-direction: row;
+}
+}
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+  /* Hide thinner navigation bar and center part of border navbar initially */
+  .thinnerNavBar {
+      display: none;
+  }
+  
+  .borderCenter {
+      display: none;
+  }
+
+  .searchInput input {
+      display: none;
+  }
+
+  .searchInput {
+      background-color: transparent;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+  }
+
+  .searchInput a .bi {
+      color: black;
+      font-weight: normal;
+  }
+
+  .borderNavBar {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .navbar-toggler {
+      border: none;
+      padding: 0;
+  }
+
+  .icon {
+      font-size: 1.3rem;
+      font-weight: 500;
+      padding: 0 8px;
+  }
+
+  .borderRight {
+      display: flex;
+      flex-direction: row; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      justify-content: right;
+  }
+
+  .navbar-toggler {
+      display: block;
+      margin: auto;
+  }
+
+  .borderMain{
+      display: flex;
+      flex-direction: row;
+  }
+  .borderLeft img{
+      width: 40px;
+      height: 40px;
+  }
+}
+
+
+
+
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* ---------------------------------  ShowCase Area  ---------------------------------*/
+.showcaseArea{
+  height: 60vh;
+}
+
+
+
+/* Ensure the cart icon container has relative positioning */
+#toggleCart {
+  position: relative;
+}
+
+main{
+  padding: 0;
+  background: black;
+}
+
+.footer-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#getApi, #findUs{
+  cursor: pointer;
+}
+.emailUs{
+    text-decoration: none; /* Removes underline */
+    color: inherit;        /* Inherits color from parent element */
+    font-family: inherit;  /* Inherits font from parent element */
+    font-size: inherit;    /* Inherits font size from parent element */
+}
+
+
+/* Style for the dropdown menu container */
+.navbar-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position below the navbar */
+  left: 0;
+  width: 100%; /* Full width */
+  background: white;
+  border: 1px solid #ddd;
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Style for the content inside the dropdown */
+.navbar-dropdown-content {
+  padding: 10px; /* Adjust padding as needed */
+}
+
+/* Style for the dropdown menu list */
+.navbar-dropdown-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for each dropdown item */
+.navbar-dropdown-item {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+/* Style for hover effect on dropdown items */
+.navbar-dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* Hide dropdown menu initially */
+#mobileDropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the nav item */
+  right: 0;
+  background-color: #fff;
+  border: none;
+  z-index: 2000;
+  box-shadow: none;
+  width: 250px; /* Adjust width as needed */
+  padding: 10px;
+}
+
+/* Show dropdown menu when active */
+#mobileDropdown.show {
+  display: block;
+  transition: 1s all;
+}

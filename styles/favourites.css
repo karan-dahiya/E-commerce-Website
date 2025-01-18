@@ -1,0 +1,162 @@
+/* Base styles for #favourites */
+#favourites {
+    position: absolute;
+    top: 72px; /* Adjusted to your navbar height */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 72px); /* Full viewport height minus navbar height */
+    background-color:rgb(244, 243, 243);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Change to column to align content vertically */
+    overflow: auto;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Visible state */
+#favourites.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bi-list-stars{
+    font-size: 5rem;
+}
+#favourites h2{
+    text-align: left;
+    margin: 20px;
+}
+
+.close-btnFav {
+    cursor: pointer;
+    color: white;
+    background-color: #00A7F8;
+    border: none;
+    width: 100%;
+}
+.close-btnFav:hover {
+    background-color: #40b7f3;
+    transition: 1s all;
+}
+
+
+
+/* STYLES FOR PRODUCT IN FAVORUTIES PAGE */
+.removeProductDiv {
+    height: 100%;
+}
+
+.removeProduct {
+    background-color: #00A7F8;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    height: 100%;
+    padding: 30px 10px;
+    cursor: pointer; /* Add cursor to indicate it's clickable */
+}
+
+.removeProduct:hover {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+
+/* Styles when fav button clicked */
+.confirmation-messageFav {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #ff0000; /* Success red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.confirmation-messageFav.showFav {
+    transform: translateX(0);
+    opacity: 1;
+}
+/* Style for Favourites button */
+#favouritesButton {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect for Favourites button */
+#favouritesButton:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    border-color: grey;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+}
+
+/* Style for the "favorited" state of the Favourites button */
+#favouritesButton.favorited {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+.removeProductFav{
+    background-color:rgb(236, 47, 47);
+    border-color: rgb(236, 47, 47);
+    color: white;
+    height: auto;
+    bottom: 0;
+    width: 50%;
+}
+.removeProductFav:hover{
+    background-color: red;
+    border-color: red;
+    transition: 1s all;
+}
+.favCardStyle{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 60px 20px 60px;
+}
+#favCardSt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#removeProductDivFav{
+    display: flex;
+    flex-direction: row;
+    width: 100;
+}
+#addToCart{
+    background-color: #28a745;
+    border: #28a745;
+    color: white;
+    width: 50%;
+}
+#addToCart:hover{
+    background-color: darkgreen;
+    transition: 1s all;
+}
+
+@media (max-width: 768px) {
+    #favourites {
+        top: 46px; /* Adjusted to your navbar height */
+    }
+    .row>* {
+        width: auto;
+    }
+  }

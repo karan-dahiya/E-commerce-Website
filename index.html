@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="images/only_logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIC-Mart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- STYLESHEET -->
+    <link href="styles/showcase.css" rel="stylesheet">
+    <link href="styles/productStyles.css" rel="stylesheet">
+    <link href="styles/frontScrrenCard.css" rel="stylesheet">
+    <link href="styles/expandviewProduct.css" rel="stylesheet">
+    <link href="styles/favourites.css" rel="stylesheet">
+    <link href="styles/cartStyles.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
+    <link href="styles/getApi.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Main navbar for the website -->
+        <div class="navBarMain">
+            <nav class="navbar navbar-expand-lg thinnerNavBar">
+                <div class="container-fluid">
+                    <div class="thinnerLeft">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active getApi" id="getApi">GetApi</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="thinnerRight">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active emailUs" href="mailto:info@vic-mart.com?subject=Inquiry%20from%20vic-mart%20website">Email us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg borderNavBar">
+                <div class="container-fluid borderMain">
+                    <div class="borderLeft"><a class="navbar-brand bigLogo" href="#"><img
+                                src="images/only_logo.png">VIC-Mart</a>
+                    </div>
+
+                    <div class="borderCenter">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown" id="categoriesDropdown">
+                                <a class="nav-link active" href="#" id="categoriesButton" role="button">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu" id="categoriesMenu">
+                                    <li><a class="dropdown-item" data-category="men's clothing" href="#">Men's
+                                            Clothing</a></li>
+                                    <li><a class="dropdown-item" data-category="women's clothing" href="#">Women's
+                                            Clothing</a></li>
+                                    <li><a class="dropdown-item" data-category="jewelery" href="#">Jewelery</a></li>
+                                    <li><a class="dropdown-item" data-category="electronics" href="#">Electronics</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" id="men">
+                                <a class="nav-link active" href="#">Men</a>
+                            </li>
+                            <li class="nav-item" id="women">
+                                <a class="nav-link active" href="#">Women</a>
+                            </li>
+                            <li class="nav-item" id="electronics">
+                                <a class="nav-link active" href="#">Electronics</a>
+                            </li>
+                            <li class="nav-item" id="jewelery">
+                                <a class="nav-link active" href="#">Jewelery</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="borderRight" style="display: flex; flex-direction: row;">
+                        <ul class="navbar-nav" style="display: flex; flex-direction: row; align-items: center; ">
+                            <li class="nav-item hideIcon1">
+                                <a class="nav-link active" id="toggleCart"><i class="bi bi-bag icon"></i></a>
+                            </li>
+                            <li class="nav-item hideIcon2">
+                                <a class="nav-link active" id="toggleFavourites">
+                                    <i class="bi bi-heart icon"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown navbar-toggler">
+                                <a class="nav-link active mobileTrigger" id="mobileTrigger">
+                                    <i class="bi bi-list icon"></i>
+                                </a>
+                                <ul class="dropdown-menu" id="mobileDropdown">
+                                    <li><a class="dropdown-item dd" data-category="men's clothing" href="#" id="men">Men's Clothing</a></li>
+                                    <li><a class="dropdown-item dd" data-category="women's clothing" href="#">Women's Clothing</a></li>
+                                    <li><a class="dropdown-item dd" data-category="jewelery" href="#">Jewelery</a></li>
+                                    <li><a class="dropdown-item dd" data-category="electronics" href="#">Electronics</a></li>
+                                    <li><a class="dropdown-item getApiMobile" id="getApi">GetApi</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item emailUs" href="mailto:info@vic-mart.com?subject=Inquiry%20from%20vic-mart%20website">Email us</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+        </div>
+        </nav>
+        </div>
+    </header>
+    <main >
+        <div class="showcaseArea">
+            <div class="showcase">
+                <div class="slider">
+                    <div class="list">
+                        <div class="item">
+                            <img src="images/p1.jpg" alt="picture1">
+                        </div>
+                        <div class="item">
+                            <img src="images/p2.jpg" alt="picture2">
+                        </div>
+                        <div class="item">
+                            <img src="images/p3.jpg" alt="picture3">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button id="prev"><</button>
+                        <button id="next">></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="frontScreen-container"></div>
+        <!-- <div class="container" id="outputApi"> -->
+
+        </div>
+        <!-- Expanded Card View -->
+        <div id="expandedCard" class="expanded-card">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <div id="expandedContent"></div>
+        </div>
+        <div class="container">
+        <div id="favourites">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="cart">
+            </div>
+        </div>
+        <div class="findUsDiv" id="findUsDiv">
+
+        </div>
+        <div class="getApiDiv" id="getApiDiv">
+
+        </div>
+        <!-- Modal Structure -->
+
+    </main>
+    
+    <!-- FOOTER FOR THE WEBPAGE -->
+    <footer>
+        <!-- Optional: Back to Top Button -->
+        <a href="#top" class="back-to-top">Back to Top</a>
+        <div class="footer-content">
+            <!-- Company Information -->
+            <div class="footer-section company-info">
+                <p>© 2024 VIC-Mart, Inc. All rights reserved.</p>
+                <p>4461, Interurban Rd</p>
+                <p>Victoria, CA</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- JAVASCRIPTS      -->
+    <script src="./javaScripts/loadProducts.js"></script>
+    <script src="./javaScripts/categories.js"></script>
+    <script src="./javaScripts/cart.js"></script>
+    <script src="./javaScripts/countryList.js"></script>
+    <script src="./javaScripts/showcase.js"></script>
+    <script src="./javaScripts/script.js"></script>
+    <script src="./javaScripts/getApi.js"></script>
+    <script src="./javaScripts/favourites.js"></script>
+</body>
+
+</html>
